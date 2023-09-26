@@ -1,0 +1,9 @@
+CMD
+Codecov
+envoke
+github
+isFalse
+Lifecycle
+precommit
+testrpackageV
+xfun

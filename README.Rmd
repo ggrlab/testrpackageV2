@@ -6,10 +6,10 @@ output: github_document
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
-    collapse = TRUE,
-    comment = "#>",
-    fig.path = "man/figures/README-",
-    out.width = "100%"
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
 )
 ```
 
@@ -85,13 +85,14 @@ therefore I will continue with the PAT.
 usethis::create_github_token()
 gitcreds::gitcreds_set() # Then enter the freshly generated token
 usethis::use_github(
-    organisation = "ggrlab",
-    private = FALSE,
-    visibility = "public"
+  organisation = "ggrlab",
+  private = FALSE,
+  visibility = "public"
 )
 usethis::use_tidy_github()
 usethis::use_tidy_github_actions()
-# overwrite tidy's default "check-full" with "check-standard" to not run so many checks
+# overwrite tidy's default "check-full" with "check-standard"
+# to not run so many checks
 usethis::use_github_action("check-standard")
 usethis::use_tidy_github_labels()
 usethis::use_pkgdown_github_pages()
@@ -124,6 +125,17 @@ usethis::use_lifecycle()
 usethis::use_news_md()
 ```
 
+precommit is a wonderful tool to check your code before committing it. 
+
+```r
+# https://lorenzwalthert.github.io/precommit/articles/precommit.html
+# install.packages("precommit")
+# bash::$ conda deactivate
+# bash::$ pip3 install pre-commit
+precommit::install_precommit()
+precommit::use_precommit()
+
+```
 
 Now ``git push`` updates the remote to the latest commit.
 
