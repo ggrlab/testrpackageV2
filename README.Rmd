@@ -83,7 +83,7 @@ therefore I will continue with the PAT.
 
 ```{r}
 usethis::create_github_token()
-gitcreds::gitcreds_set()  # Then enter the freshly generated token
+gitcreds::gitcreds_set() # Then enter the freshly generated token
 usethis::use_github(
     organisation = "ggrlab",
     private = FALSE,
@@ -91,6 +91,6 @@ usethis::use_github(
 )
 usethis::use_tidy_github()
 usethis::use_tidy_github_actions()
-# usethis::use_tidy_github_labels() 
-# usethis::use_pkgdown_github_pages()  
+usethis::use_tidy_github_labels()
+usethis::use_pkgdown_github_pages()
 ```
