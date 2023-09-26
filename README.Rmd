@@ -67,6 +67,7 @@ install.packages("languageserver")
 install.packages("devtools")
 usethis::create_tidy_package("/home/gugl/clonedgit/mwe/testrpackageV2")
 usethis::use_tidy_style(strict = TRUE)
+
 # go into the folder and open the project
 setwd("/home/gugl/clonedgit/mwe/testrpackageV2")
 usethis::use_git()
@@ -124,6 +125,17 @@ usethis::use_author(
 # )
 usethis::use_lifecycle()
 usethis::use_news_md()
+# install.packages("lintr")
+lintr::use_lintr(type = "tidyverse")
+# change manually to 
+
+#   linters: linters_with_defaults(
+#       line_length_linter = line_length_linter(120),
+#       indentation_linter = 4
+#   ) # see vignette("lintr")
+#   encoding: "UTF-8"
+
+
 ```
 
 precommit is a wonderful tool to check your code before committing it. 
