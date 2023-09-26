@@ -173,7 +173,7 @@ install.packages("xfun")
 What:    ``devtools::check()`` throws the following error:
 
 ```
-❯ checking re-building of vignette outputs ... ERROR
+> checking re-building of vignette outputs ... ERROR
   Error(s) in re-building vignettes:
     ...
   --- re-building 'first_function.Rmd' using rmarkdown
