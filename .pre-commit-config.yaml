@@ -73,12 +73,18 @@ repos:
         entry: Rscript -e 'devtools::check()'
         language: r
         stages:
-          - "push"
+          - "pre-push"
+      - id: devtools::build_readme
+        name: devtools::build_readme
+        entry: Rscript -e 'devtools::build_readme()'
+        language: r
+        stages:
+          - "pre-push"
       - id: devtools::test
         name: devtools::test
         entry: Rscript -e 'devtools::test()'
         language: r
         stages:
-          - "push"
+          - "pre-push"
 # ci:
 #     autoupdate_schedule: monthly
