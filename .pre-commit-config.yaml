@@ -68,6 +68,25 @@ repos:
 #         language: fail
 #         files: '\.(Rhistory|RData|Rds|rds)$'
 #         # `exclude: <regex>` to allow committing specific files
-
+-   repo: local
+    hooks:
+    -   id: forbid-to-commit
+        name: Don't commit common R artifacts
+        entry: Cannot commit .Rhistory, .RData, .Rds or .rds.
+        language: fail
+        files: '\.(Rhistory|RData|Rds|rds)$'
+        # `exclude: <regex>` to allow committing specific files
+    - id: devtools::check
+      name: devtools::check
+      entry: Rscript -e 'devtools::check()'
+      language: r
+      stages:
+        - "push"
+    - id: devtools::test
+      name: devtools::test
+      entry: Rscript -e 'devtools::test()'
+      language: r
+      stages:
+        - "push"
 # ci:
 #     autoupdate_schedule: monthly
