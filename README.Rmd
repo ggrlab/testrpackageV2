@@ -146,6 +146,24 @@ git push
 
 - Add a new vignette by running ``usethis::use_vignette("vignette_name")``
 - Change the vignette in ``vignettes/vignette_name.Rmd``
-- Build the vignette by 1) installing the package and 2) building the vignette
-  - ``devtools::install()``
-  - ``devtools::build_vignettes()``
+- Build the vignette by running ``devtools::build_vignettes()`` (This installs the package)
+
+
+# Troubleshooting: 
+
+## ``devtools::build_vignettes`` fails
+```
+--- re-building ‘first_function.Rmd’ using rmarkdown
+Error: processing vignette 'first_function.Rmd' failed with diagnostics:
+unused argument (resolve_symlink = FALSE)
+--- failed re-building ‘first_function.Rmd’
+
+SUMMARY: processing the following file failed:
+  ‘first_function.Rmd’
+```
+
+Solution: 
+
+```
+install.packages("xfun")
+```
