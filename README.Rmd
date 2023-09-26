@@ -134,6 +134,8 @@ git push
 
 # How to improve/extend this package
 - Increase version number by ``usethis::use_version()``
+  - Specifically: ``usethis::use_version("minor")`` 
+  - For development: ``usethis::use_version("dev")``
 
 ### New functionality
 
