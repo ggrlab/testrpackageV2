@@ -103,7 +103,7 @@ Additional information:
 usethis::use_r("first_function", open=FALSE)
 # Creating your first test
 usethis::use_test("first_function", open=FALSE)
-
+usethis::use_vignette("first_function")
 ```
 
 
