@@ -6,10 +6,10 @@ output: github_document
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
+    collapse = TRUE,
+    comment = "#>",
+    fig.path = "man/figures/README-",
+    out.width = "100%"
 )
 ```
 
@@ -85,9 +85,9 @@ therefore I will continue with the PAT.
 usethis::create_github_token()
 gitcreds::gitcreds_set() # Then enter the freshly generated token
 usethis::use_github(
-  organisation = "ggrlab",
-  private = FALSE,
-  visibility = "public"
+    organisation = "ggrlab",
+    private = FALSE,
+    visibility = "public"
 )
 usethis::use_tidy_github()
 usethis::use_tidy_github_actions()
@@ -145,24 +145,33 @@ git push
 
 
 # How to improve/extend this package
-- Increase version number by ``usethis::use_version()``
-  - Specifically: ``usethis::use_version("minor")`` 
-  - For development: ``usethis::use_version("dev")``
 
-### New functionality
+```r
 
-- Add new functionality, documented and with tests. During development, have a clean R 
-  environment and run ``devtools::load_all()`` to load the current status of the package.
-- After adding new functionality, run ``devtools::check()`` to update the documentation.
-  - Runs ``devtools::document()``
-  - Bundles the package before checking
-  - Runs checks
+# Use pre-commits to check your code before committing it
+remotes::install_github("lorenzwalthert/precommit")
+precommit::install_precommit()
+precommit::use_precommit()
 
-### Vignettes
+# Increase the versions, manually or by using usethis::use_version()
+usethis::use_version("minor")
+usethis::use_version("dev")
 
-- Add a new vignette by running ``usethis::use_vignette("vignette_name")``
-- Change the vignette in ``vignettes/vignette_name.Rmd``
-- Build the vignette by running ``devtools::build_vignettes()`` (This installs the package)
+# Add new functionality and document it
+# During development, have a clean R environment and run devtools::load_all() to load the current status of the package
+devtools::load_all()
+
+# After adding new functionality, run devtools::check() to update the documentation
+devtools::check()
+devtools::document()
+
+# Vignettes are a great way to document your package
+# Add a new vignette by running 
+usethis::use_vignette("vignette_name")
+# Change the vignette in vignettes/vignette_name.Rmd
+# Build the vignette by running
+devtools::build_vignettes() # This also installs the package
+```
 
 
 # Troubleshooting: 
