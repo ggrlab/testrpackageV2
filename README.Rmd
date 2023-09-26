@@ -71,22 +71,25 @@ setwd("/home/gugl/clonedgit/mwe/testrpackageV2")
 usethis::use_git()
 ```
 
-``usethis`` tells you to envoke further github-related commands. To be able to call them, you need to have your package pushed to github already. 
-For this, you first have to create a repository on github and then push your package to it.
-```bash
-git remote add origin git@github.com:ggrlab/testrpackagev2.git
-git branch -M main
-git push -u origin main
-```
+``usethis`` tells you to envoke further github-related commands. 
+There is two ways to continue: 
+1. Create a personal access token (PAT) and use it to authenticate with github
+2. Manually push the package to github 
+
+Pushing manually works fine, but some advanced ``usethis`` commands won't work properly, 
+therefore I will continue with the PAT.
+
 
 ```{r}
-# usethis::create_github_token()
-## use_github() has been done by creating the repository and pushing the package to it
-# usethis::use_github()  
-## except for: (See https://usethis.r-lib.org/reference/use_github.html)
-usethis::use_github_links()  # Changes DESCRIPTION
+usethis::create_github_token()
+gitcreds::gitcreds_set()  # Then enter the freshly generated token
+usethis::use_github(
+    organisation = "ggrlab",
+    private = FALSE,
+    visibility = "public"
+)
 usethis::use_tidy_github()
 usethis::use_tidy_github_actions()
-# usethis::use_tidy_github_labels()  # only possible with personal access token, left out for now
-usethis::use_pkgdown_github_pages()
+# usethis::use_tidy_github_labels() 
+# usethis::use_pkgdown_github_pages()  
 ```
