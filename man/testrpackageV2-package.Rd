@@ -6,7 +6,7 @@
 \alias{testrpackageV2-package}
 \title{testrpackageV2: Testing an R-package installation}
 \description{
-This is a test package to learn how to properly install an R-package
+This is a test package to learn how to properly install an R-package.
 }
 \seealso{
 Useful links:

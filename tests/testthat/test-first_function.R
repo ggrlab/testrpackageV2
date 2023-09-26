@@ -3,5 +3,5 @@ test_that("multiplication works", {
 })
 test_that("first function works", {
   a <- testthat::capture_output(first_function())
-  testthat::expect_equal(a, "Hello World!")
+  testthat::expect_equal(a, "[1] \"Hello World!\"")
 })
