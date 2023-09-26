@@ -6,10 +6,10 @@ output: github_document
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
+    collapse = TRUE,
+    comment = "#>",
+    fig.path = "man/figures/README-",
+    out.width = "100%"
 )
 ```
 
@@ -54,3 +54,37 @@ plot(pressure)
 ```
 
 In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
+
+
+# How was this package created
+
+```r
+# for VSCode
+install.packages("languageserver")
+install.packages("devtools")
+usethis::create_tidy_package("/home/gugl/clonedgit/mwe/testrpackageV2")
+usethis::use_tidy_style(strict = TRUE)
+# go into the folder and open the project
+setwd("/home/gugl/clonedgit/mwe/testrpackageV2")
+usethis::use_git()
+```
+
+``usethis`` tells you to envoke further github-related commands. To be able to call them, you need to have your package pushed to github already. 
+For this, you first have to create a repository on github and then push your package to it.
+```bash
+git remote add origin git@github.com:ggrlab/testrpackagev2.git
+git branch -M main
+git push -u origin main
+```
+
+```{r}
+# usethis::create_github_token()
+## use_github() has been done by creating the repository and pushing the package to it
+# usethis::use_github()  
+## except for: (See https://usethis.r-lib.org/reference/use_github.html)
+usethis::use_github_links()  # Changes DESCRIPTION
+usethis::use_tidy_github()
+usethis::use_tidy_github_actions()
+usethis::use_tidy_github_labels()
+usethis::use_pkgdown_github_pages()
+```
