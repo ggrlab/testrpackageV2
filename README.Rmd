@@ -111,10 +111,29 @@ usethis::use_author(
     role=c("aut", "cre"), 
     comment = c("ORCID"="0000-0002-1495-9162")
     )
+
+#### Do not use use_description, it will OVERWRITE! your DESCRIPTION file
+#### Manually change the information there instead
+# usethis::use_description(
+#     fields = list(
+#         "Title" = "Testing an R-package installation",
+#         "Description" = "This is a test package to learn how to properly install an R-package"
+#     )
+# )
+usethis::use_coverage()
 ```
 
 
 Now ``git push`` updates the remote to the latest commit.
-````bash
+
+```bash
 git push
+```
+
+Using packages: 
+
+
+```r
+usethis::use_data_table()  # only if you used the data.table package
+
 ```
