@@ -171,6 +171,8 @@ usethis::use_vignette("vignette_name")
 # Change the vignette in vignettes/vignette_name.Rmd
 # Build the vignette by running
 devtools::build_vignettes() # This also installs the package
+
+devtools::build_readme() # This updates the README.md file from the README.Rmd
 ```
 
 
