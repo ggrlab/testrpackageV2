@@ -120,6 +120,7 @@ usethis::use_author(
 #         "Description" = "This is a test package to learn how to properly install an R-package"
 #     )
 # )
+usethis::use_lifecycle()
 ```
 
 
@@ -128,3 +129,6 @@ Now ``git push`` updates the remote to the latest commit.
 ```bash
 git push
 ```
+
+
+# How to improve/extend this package
