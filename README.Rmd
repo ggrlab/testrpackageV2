@@ -30,7 +30,7 @@ The goal of testrpackageV2 is to ...
 You can install the development version of testrpackageV2 like so:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+devtools::install_github("ggrlab/testrpackageV2")
 ```
 
 ## Example
@@ -96,6 +96,16 @@ usethis::use_github_action("check-standard")
 usethis::use_tidy_github_labels()
 usethis::use_pkgdown_github_pages()
 ```
+
+Additional information: 
+```r
+# Creating your first function
+usethis::use_r("first_function", open=FALSE)
+# Creating your first test
+usethis::use_test("first_function", open=FALSE)
+
+```
+
 
 Now ``git push`` updates the remote to the latest commit.
 ````bash
