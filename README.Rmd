@@ -82,6 +82,7 @@ therefore I will continue with the PAT.
 
 
 ```{r}
+#
 usethis::create_github_token()
 gitcreds::gitcreds_set() # Then enter the freshly generated token
 usethis::use_github(
