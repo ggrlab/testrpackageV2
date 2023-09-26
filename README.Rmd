@@ -121,6 +121,7 @@ usethis::use_author(
 #     )
 # )
 usethis::use_lifecycle()
+usethis::use_news_md()
 ```
 
 
@@ -132,6 +133,7 @@ git push
 
 
 # How to improve/extend this package
+- Increase version number by ``usethis::use_version()``
 
 ### New functionality
 
