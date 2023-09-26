@@ -132,3 +132,20 @@ git push
 
 
 # How to improve/extend this package
+
+### New functionality
+
+- Add new functionality, documented and with tests. During development, have a clean R 
+  environment and run ``devtools::load_all()`` to load the current status of the package.
+- After adding new functionality, run ``devtools::check()`` to update the documentation.
+  - Runs ``devtools::document()``
+  - Bundles the package before checking
+  - Runs checks
+
+### Vignettes
+
+- Add a new vignette by running ``usethis::use_vignette("vignette_name")``
+- Change the vignette in ``vignettes/vignette_name.Rmd``
+- Build the vignette by 1) installing the package and 2) building the vignette
+  - ``devtools::install()``
+  - ``devtools::build_vignettes()``
